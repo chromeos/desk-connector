@@ -1,10 +1,36 @@
 # Desk Connector Integration Guide
-### Eligibility Criteria:
-The web page hosting the JS for the code below should be served from https://[allowlisted domain]. 
-*   HTTP (non-secure) pages will not be able to send messages to Desk Connector.
-*   Pages from non-allowlisted domains will not be able to send messages to Desk Connector.
 
-Please reach out for eligibility issue. 
+### Enterprise enrollment:
+#### Before you begin
+* Make sure you have access to the [Google Admin console](admin.google.com). The Admin console is only available when you're signed in to an admin account. If you don't have access to an admin account, get help from someone else who does. For details, see [Who is my administrator?](https://support.google.com/a/answer/6208960?sjid=5010985786185906113-NA)
+* [Enroll ChromeOS devices](https://support.google.com/chrome/a/answer/1360534?sjid=5010985786185906113-NA) in your domain.
+* Ensure that devices have ChromeOS version 108 or later.
+
+#### Set up the ChromeOS Desk connector on devices
+1. In the Admin console, go to **Menu** > **Device** > **Chrome** > **Settings** > **Users & browsers**.
+1. To configure the ChromeOS Desk connector for all devices, leave the top organizational unit selected. Otherwise, select a child [organizational unit](https://support.google.com/a/topic/1227584?sjid=5010985786185906113-NA).
+1. Scroll to **Desk API**.
+1. For **Desk API for third-party ChromeOS desk control**, select **Enable Desk API for third-party ChromeOS desk control**.
+1. Click **Save**.
+
+#### Verify policies are applied
+After you apply any Chrome policies, users need to restart Chrome for the settings to take effect. You can check users’ devices to make sure the policy was applied correctly.
+
+1. On a managed device, go to **chrome://policy**.
+1. Click **Reload policies**.
+1. For **DeskAPIThirdPartyAccessEnabled**:
+   1. Make sure **Status** is **OK**.
+   1. Click **Show more** and make sure **Value** is set to **True**.
+1. For DeskAPIThirdPartyAllowlist:
+    1. Make sure **Status** is **OK**.
+    1. Click **Show more** and make sure that the value fields are the same as what you set for **Enable Desk API for a list of third-party domain** in the Google Admin console.
+    
+You can use Inspect Console to view errors that the browser reports as the third-party partner’s page loads.
+
+1. On a managed device, go to the URL that you entered for **Enable Desk API for a list of third-party domain**. 
+1. Click **Console**.
+1. Type **chrome.runtime**.
+1. Verify the object is not **undefined**.
 
 
 ### **API description:**
@@ -277,7 +303,7 @@ chrome.runtime.sendMessage("kflgdebkpepnpjobkdfeeipcjdahoomc", {
 
 
 
-* 2a. Remove desk API by default comes with a confirmation window. To skip the confirmation and directly close the desk, use the below parameter:
+2a. Remove desk API by default comes with a confirmation window. To skip the confirmation and directly close the desk, use the below parameter:
 
 
 ```
