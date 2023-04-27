@@ -63,12 +63,6 @@ Use the `GetActiveDesk` API to programmatically query the current active desk.
 Use the `SwitchDesk` API to programmatically switch to an appointed desk.
 
 
-### **Getting Access:**
-
-
-Install [Desk Connector Demo](https://chrome.google.com/webstore/detail/desk-connector-demo/oagemgapjncacjdaockjfaidedggjond?hl=en&authuser=0) extension from web store
-
-
 ### **Check ChromeOS version:**
 
 Desk API feature is rolled out incrementally. Check below schedule for the availability of individual API method.
