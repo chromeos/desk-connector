@@ -3,7 +3,7 @@
 Contact desk-connector-feedback@google.com for questions and feedbacks.
 
 ## Code lab
-Try out this [codelab](https://codelabs.devsite.corp.google.com/deskapi) to interact with desk connector directly.  
+Try out this [code lab](https://codelabs.developers.google.com/deskapi) to interact with desk connector directly.  
 
 ## Integration Guide
 ### Enterprise enrollment:
