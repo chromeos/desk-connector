@@ -1,4 +1,6 @@
 # Desk Connector Integration Guide
+### Contact 
+Contact desk-connector-feedback@google.com for questions and feedbacks.
 
 ### Enterprise enrollment:
 #### Before you begin
