@@ -1,5 +1,11 @@
-# Desk Connector Integration Guide
+# Desk Connector
+## Contact 
+Contact desk-connector-feedback@google.com for questions and feedbacks.
 
+## Code lab
+Try out this [codelab](https://codelabs.devsite.corp.google.com/deskapi) to interact with desk connector directly.  
+
+## Integration Guide
 ### Enterprise enrollment:
 #### Before you begin
 * Make sure you have access to the [Google Admin console](admin.google.com). The Admin console is only available when you're signed in to an admin account. If you don't have access to an admin account, get help from someone else who does. For details, see [Who is my administrator?](https://support.google.com/a/answer/6208960?sjid=5010985786185906113-NA)
