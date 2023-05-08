@@ -1,5 +1,8 @@
 # Desk Connector Integration Guide
 
+### Contact 
+Contact desk-connector-feedback@google.com for questions and feedbacks.
+
 ### Enterprise enrollment:
 #### Before you begin
 * Make sure you have access to the [Google Admin console](admin.google.com). The Admin console is only available when you're signed in to an admin account. If you don't have access to an admin account, get help from someone else who does. For details, see [Who is my administrator?](https://support.google.com/a/answer/6208960?sjid=5010985786185906113-NA)
@@ -426,8 +429,11 @@ To check whether the extension has been installed correctly, follow the steps:
 
 
 
-*   **Desk action throttling**
+1.   **Desk action throttling**
 
 The animation for Desk launch, remove, and switch takes 1-2 seconds to settle. Back-to-back desk operation will be throttled. For example, if you launch a desk, and then remove the desk immediately before the first animation settles (&lt;1 second), the second operation will fail. 
 
 To handle this exception: retries with an interval on the DeskBeingModifiedError. 
+
+### Code lab
+If you don't have the enterprise setup, you can try out this [codelab](https://codelabs.devsite.corp.google.com/deskapi) to interact with desk connector directly.  
