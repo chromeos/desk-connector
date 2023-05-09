@@ -400,22 +400,7 @@ chrome.runtime.sendMessage("kflgdebkpepnpjobkdfeeipcjdahoomc", {
 ### Caveats
 
 
-
-1. Incognito window.
-
-To have the integration work in an **incognito window**, the extension should be set to allow incognito. Follow the steps below to allow it: 
-
-
-
-* Navigate to chrome://extensions and open extension details page. 
-
-
-
-* Toggle on the “allow in incognito” option.
-
-
-
-2. Desk action throttling
+1. Desk action throttling
 
 The animation for Desk launch, remove, and switch takes 1-2 seconds to settle. Back-to-back desk operation will be throttled. For example, if you launch a desk, and then remove the desk immediately before the first animation settles (&lt;1 second), the second operation will fail. 
 
