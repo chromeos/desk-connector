@@ -2,13 +2,13 @@
 ## Contact 
 Contact desk-connector-feedback@google.com for questions and feedbacks.
 
-## Code lab
-Try out this [code lab](https://codelabs.developers.google.com/deskapi) to interact with desk connector directly.  
+## Codelab
+Try out this [codelab](https://codelabs.developers.google.com/deskapi) to interact with desk connector directly.  
 
 ## Integration Guide
 ### Enterprise enrollment:
 #### Before you begin
-* Make sure you have access to the [Google Admin console](admin.google.com). The Admin console is only available when you're signed in to an admin account. If you don't have access to an admin account, get help from someone else who does. For details, see [Who is my administrator?](https://support.google.com/a/answer/6208960?sjid=5010985786185906113-NA)
+* Make sure you have access to the [Google Admin console](https://admin.google.com). The Admin console is only available when you're signed in to an admin account. If you don't have access to an admin account, get help from someone else who does. For details, see [Who is my administrator?](https://support.google.com/a/answer/6208960?sjid=5010985786185906113-NA)
 * [Enroll ChromeOS devices](https://support.google.com/chrome/a/answer/1360534?sjid=5010985786185906113-NA) in your domain.
 * Ensure that devices have ChromeOS version 108 or later.
 
@@ -397,13 +397,13 @@ chrome.runtime.sendMessage("kflgdebkpepnpjobkdfeeipcjdahoomc", {
 
 
 
-### Debugging
+### Caveats
 
 
 
 1. Incognito window.
 
-To have the integration work in an **incognito window**, the extension should be set to allow incognito. Follow the below to allow it: 
+To have the integration work in an **incognito window**, the extension should be set to allow incognito. Follow the steps below to allow it: 
 
 
 
@@ -415,24 +415,7 @@ To have the integration work in an **incognito window**, the extension should be
 
 
 
-2. Validate extension.
-
-To check whether the extension has been installed correctly, follow the steps:
-
-
-
-1. Navigates to chrome://extensions and clicks **service worker**.
-
-2. On the new window, go to the **Console** tab.
-3. print out the value of `chrome.wmDesksPrivate` to console.
-4. If you see the result returned (i.e should not be undefined), then extension is installed properly.
-
-
-### Known issue
-
-
-
-*   **Desk action throttling**
+2. Desk action throttling
 
 The animation for Desk launch, remove, and switch takes 1-2 seconds to settle. Back-to-back desk operation will be throttled. For example, if you launch a desk, and then remove the desk immediately before the first animation settles (&lt;1 second), the second operation will fail. 
 
