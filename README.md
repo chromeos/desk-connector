@@ -68,6 +68,10 @@ Use the `GetActiveDesk` API to programmatically query the current active desk.
 
 Use the `SwitchDesk` API to programmatically switch to an appointed desk.
 
+========================
+#### **Desk Events**
+Consume a set of desk events to get notified when there is a desk being added/removed or switched.
+
 
 ### **Check ChromeOS version:**
 
@@ -120,7 +124,7 @@ The same binary will be released to beta channel first and to stable channel app
 Update ChromeOS to latest version to get full access feature.
 
 
-### **Development**
+### **Regular API Development**
 
 
 #### Syntax
@@ -392,6 +396,78 @@ chrome.runtime.sendMessage("kflgdebkpepnpjobkdfeeipcjdahoomc", {
     }
   }
 );
+```
+### **Events API development**
+#### Syntax
+```
+// Initialize a two-dimensional channel 
+const port = chrome.runtime.connect("kflgdebkpepnpjobkdfeeipcjdahoomc");
+
+
+// Define your listener
+function f = ....
+
+// Add a listener
+port.onMessage.addListener(f);
+
+// Remove a listener
+port.onMessage.removeListener(f);
+```
+
+#### Events payload
+```
+DeskAddedEvents:
+{
+ eventName: "DeskAdded",
+ data: {
+  deskId: REAL_DESK_ID,
+}
+
+DeskRemovedEvents:
+{
+ eventName: "DeskRemoved",
+ data: {
+  deskId: REAL_DESK_ID,
+ }
+}
+
+DeskSwitchedEvents:
+{
+eventName: "DeskSwitched",
+data:{
+  activated: DESK_BEING_ACTIVATED,
+  deactivated: DESK_BEING_DEACTIVATED,
+ }
+}
+```
+
+#### Example
+```
+const port = chrome.runtime.connect("kflgdebkpepnpjobkdfeeipcjdahoomc");
+
+
+// Define your listener
+const f = (event) => {
+ if (event.eventName == "DeskAdded") {
+ // Your own logic to handle desk added events;
+ console.log("DeskAdded");
+console.log("new deskId is: " + event.data.deskId);
+}
+if (event.eventName == "DeskRemoved") {
+ // Your own logic to handle desk removed events.
+ console.log("DeskRemoved");
+console.log("removed deskId is: " + event.data.deskId);
+}
+ if (event.eventName == "DeskSwitched") {
+ // Your own logic to handle desk switched events.
+  console.log("DeskSwitched");
+  console.log("old desk id is: " + event.data.deactivated);
+  console.log("new desk id is: " + event.data.activated);
+}
+};
+
+// Add a listener
+port.onMessage.addListener(f);
 ```
 
 
