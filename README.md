@@ -125,9 +125,9 @@ The same binary will be released to beta channel first and to stable channel app
    </td>
    <td style="background-color: #93c47d">116.* and above
    </td>
-   <td style="background-color: #93c47d">JUL 25, 2023
+   <td style="background-color: #93c47d">Jul 25, 2023
    </td>
-   <td style="background-color: #93c47d">AUG 22, 2023
+   <td style="background-color: #93c47d">Aug 22, 2023
    </td>
   </tr>
 </table>
